@@ -1,0 +1,1 @@
+SELECT CONCAT('NV',RIGHT(CONCAT('000',Teacher.id),4)) as 'ID' ,Teacher.name, Position.name as 'Pos' FROM Teacher, Position WHERE Teacher.posId = Position.id
