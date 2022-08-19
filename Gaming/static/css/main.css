@@ -1,0 +1,192 @@
+/* Header */
+.btn-group:hover>.dropdown-menu{
+    display: block;
+}
+
+.btn-group{
+    box-sizing: border-box;
+    margin: auto;
+    width: auto;
+    height: auto;
+    
+}
+
+.dropdown-menu .popup-list-cart {
+    width: 300px;
+}
+
+.navbar-brand{
+    font-size: 250%;
+}
+
+.search-box{
+    position: absolute;
+    top: 50%;
+    left: 65%;
+    transform: translate(-50%,-50%);
+    background: #535c68;
+    height: 40px;
+    border-radius: 40px;
+    padding: 0 13px;
+}
+.search-box:hover > .search-txt{
+    width: 20rem;
+    padding: 0 10px;
+
+}
+.search-box:hover > .search-btn{
+    align-items: center;
+}
+.search-btn{
+    color: #e84118;
+    position: relative;
+    /*float: right;*/ 
+    /*     width: 40px;
+        height: 40px; */
+    line-height: 40px;
+    align-items: center;
+    border-radius: 50%;
+    display: flex;
+    vertical-align: central;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+.search-txt{
+    padding: 0 10px;
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: white;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 0px;
+    
+}
+
+.labelhead{
+    margin-top: 7rem !important;
+}
+.category{
+    padding-top: 1.5rem !important;
+}
+.bg-dark{
+    background-color: #403434 !important;
+}
+.numbertext{
+    color: blue !important;
+}
+.prev{
+    left: 0px;
+}
+
+.btn-group{
+    position: relative;
+    display: inline-block;
+}
+
+/* #navbarDropdown{
+    padding-left: 30px;
+} */
+#navbarDropdown sup{
+    top: -1.4rem !important;
+    color: red !important;
+    margin-left: -.7rem !important;
+    font-size: 1.3rem;
+}
+
+/* Body */
+/* Hide the images by default */
+.mySlides {
+    display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+    cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prevs,
+.nexts {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.nexts {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prevs:hover,
+.nexts:hover {
+    color: #0077ff!important
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+    color: #fff;
+    font-size: 14px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+
+.row-image:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Six columns side by side */
+.column {
+    margin-top: 5%;
+    border-radius: 3px;
+    border: 1px solid #ededed;
+    float: left;
+    width: 11%;
+    margin-left: 4.8%
+}
+
+.column:hover{
+    border: 1px solid red;
+    width: 13%;
+}
+
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+    opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+    opacity: 1;
+}
+
+
+.card{
+    border: none !important;
+}
+
+
+/* Footer */
+footer {
+    display: flex;
+}
