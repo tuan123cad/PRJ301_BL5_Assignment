@@ -16,7 +16,6 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.Date;
 import model.Employee;
-import model.ViewDate;
 
 /**
  *
@@ -54,7 +53,8 @@ public class TimesheetReportController extends HttpServlet {
         Date end = DateTimeHelper.addDays(DateTimeHelper.addMonths(begin, 1),-1);
         EmployeeDBContext db = new EmployeeDBContext();
         ArrayList<Employee> emps = db.getEmps(begin, end);
-        ArrayList<ViewDate> dates = DateTimeHelper.getDates(begin, end);
+        ArrayList<Date> dates = DateTimeHelper.getDates(begin, DateTimeHelper.addDays(end, 1));
+        emps.get(1).setRequests(db.getRequests(begin, end,emps.get(1).getId()));
         request.setAttribute("emps", emps);
         request.setAttribute("dates", dates);
         request.getRequestDispatcher("view/report.jsp").forward(request, response);

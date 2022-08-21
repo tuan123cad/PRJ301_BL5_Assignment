@@ -14,6 +14,24 @@ public class Employee {
     private int id;
     private String name;
     private ArrayList<TimeSheet> timesheets = new ArrayList<>();
+    private ArrayList<LeaveRequest> requests = new ArrayList<>();
+    
+    public float getTotalLeaves()
+    {
+        float sum = 0;
+        for (LeaveRequest request : requests) {
+            sum += request.getDays();
+        }
+        return sum;
+    }
+
+    public ArrayList<LeaveRequest> getRequests() {
+        return requests;
+    }
+
+    public void setRequests(ArrayList<LeaveRequest> requests) {
+        this.requests = requests;
+    }
     
     public float getWorkingHours()
     {

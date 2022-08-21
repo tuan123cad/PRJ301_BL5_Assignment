@@ -95,7 +95,7 @@
                             <input type="hidden" name="did" value="${d.id}" />
                             <input id="hname_edit${d.id}" type="hidden" name="dname" value="${d.name}" />
                             <input id="hmid_edit${d.id}" type="hidden" name="mid" value="${d.master.id}" />
-                            <input id="havai_edit${d.id}" type="hidden" name="avai" value="${d.avai}" />
+                            <input id="havai_edit${d.id}" type="hidden" name="avai" value="${d.avai?"avai":""}" />
                             <input class="edit_control${d.id}" type="submit"  value="Save" style="display: none;"/>
                         </form>
                         <input class="edit_control${d.id}" type="button" onclick="switchToViewMode(${d.id})" value="Cancel" style="display: none;"/>

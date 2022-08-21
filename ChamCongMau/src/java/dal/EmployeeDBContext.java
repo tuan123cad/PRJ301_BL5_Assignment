@@ -13,6 +13,7 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Employee;
+import model.LeaveRequest;
 import model.TimeSheet;
 
 /**
@@ -63,5 +64,22 @@ public class EmployeeDBContext extends DBContext {
             Logger.getLogger(EmployeeDBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
         return emps;
+    }
+    
+    public ArrayList<LeaveRequest> getRequests(Date from, Date to, int eid)
+    {
+        ArrayList<LeaveRequest> requests = new ArrayList<>();
+        LeaveRequest r = new LeaveRequest();
+        r.setId(1);
+        Employee e = new Employee();
+        e.setId(eid);
+        r.setEmployee(e);
+        r.setReason(1); // sick -2 con om, 3CT
+        Date d = new Date();
+        d = DateTimeHelper.removeTime(d);
+        r.setFrom(DateTimeHelper.addDays(d, 3));
+        r.setTo(DateTimeHelper.addDays(d, 5));
+        requests.add(r);
+        return requests;
     }
 }
