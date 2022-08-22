@@ -4,6 +4,7 @@
  */
 package check;
 
+import dal.AccountDBContext;
 import dal.TableDBContext;
 import java.io.IOException;
 import java.net.HttpURLConnection;
@@ -11,6 +12,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
+import model.Account;
 import model.Table;
 
 /**
@@ -34,9 +36,12 @@ public class CheckMethod {
 
     public static void main(String[] args) {
         TableDBContext tbc = new TableDBContext();
+        AccountDBContext abc = new AccountDBContext();
         String query = "SELECT * FROM Teacher";
         System.out.println("row: " + tbc.getQueryRow(query) + " - "+ "col: " + tbc.getQueryCol(query));
         System.out.println(tbc.getQueryType(query, 2));
+        Account account = abc.getAccount("admin", "Ad1234");
+        System.out.println(account);
 //        ArrayList<Table> table = tbc.getTable(););
 //        table.forEach((n) -> System.out.println(n.getSchema()));
 //        System.out.println("x");

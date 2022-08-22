@@ -21,9 +21,12 @@ boolean checkconn = conn.CheckConnect();
 String url = conn.getURL();
 String IP = conn.urlHost("173.243.120.230");
         %>
-        <div class="row">
-            <div class="col-md-2 col-md-offset-5">
-                <c:choose>
+
+<div class="page-wrap d-flex flex-row align-items-center">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-12 text-center">
+                        <c:choose>
                     <c:when test="${checkstatus==true}">
                         <span style="font-size: 3em; color: #006652;">
                             <i class="bi bi-check-circle"> Connected</i>
@@ -83,8 +86,12 @@ String IP = conn.urlHost("173.243.120.230");
 
                     </c:otherwise>
                 </c:choose>
+                    </div>
+                </div>
             </div>
-        </div>
-
+        </div>   
+        
     </body>
 </html>
+
+

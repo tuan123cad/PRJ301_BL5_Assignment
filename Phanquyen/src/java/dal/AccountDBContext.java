@@ -85,7 +85,7 @@ public class AccountDBContext extends DBContext {
             currentRole.setId(-1);
             while(rs.next())
             {
-                int rid = rs.getInt("rid");
+                int rid = rs.getInt("rid"); 
                 if(rid != currentRole.getId())
                 {
                     currentRole = new Role();
