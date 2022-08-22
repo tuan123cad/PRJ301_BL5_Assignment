@@ -5,6 +5,11 @@
 package check;
 
 import dal.TableDBContext;
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
 import model.Table;
 
@@ -13,14 +18,44 @@ import model.Table;
  * @author buidu_8h8ybgq
  */
 public class CheckMethod {
+    
+    public static boolean isOnline(){
+    System.setProperty("http.proxyHost", "failProxyIP");
+    System.setProperty("http.proxyPort", "failProxyPort");
+    try {
+        HttpURLConnection connection = (HttpURLConnection)new URL("https://akaking.space/").openConnection();
+        connection.connect();
+        return true;
+    } catch (Exception e) {
+        return false;
+    }
+}
+
 
     public static void main(String[] args) {
         TableDBContext tbc = new TableDBContext();
+        String query = "SELECT * FROM Teacher";
+        System.out.println("row: " + tbc.getQueryRow(query) + " - "+ "col: " + tbc.getQueryCol(query));
+        System.out.println(tbc.getQueryType(query, 2));
+//        ArrayList<Table> table = tbc.getTable(););
+//        table.forEach((n) -> System.out.println(n.getSchema()));
+//        System.out.println("x");
+//
 
-        ArrayList<Table> table = tbc.getTable();
-        table.forEach((n) -> System.out.println(n.getSchema()));
-        System.out.println("x");
+//              try {
+//         URL url = new URL("https://www.google.com/");
+//         URLConnection connection = url.openConnection();
+//         connection.connect();
+//         System.out.println("Internet is connected");
+//      } catch (MalformedURLException e) {
+//         System.out.println("Internet is not connected");
+//      } catch (IOException e) {
+//         System.out.println("Internet is not connected");
+//      }
+
+//        System.out.println(isOnline());
+
 
     }
-
 }
+

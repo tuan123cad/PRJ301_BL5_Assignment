@@ -39,7 +39,7 @@ public class ListTableController extends HttpServlet {
             request.setAttribute("counttb", ctb);
         
             request.setAttribute("dbtable", dbtable);
-            request.getRequestDispatcher("check.jsp").forward(request, response);
+            request.getRequestDispatcher("check/check.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

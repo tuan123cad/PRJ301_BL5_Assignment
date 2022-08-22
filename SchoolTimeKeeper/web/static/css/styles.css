@@ -71,3 +71,45 @@ a:hover {
     font-family: "Courier New", Courier, monospace;
 
 }
+
+th.rotate {
+    /* Something you can count on */
+    height: 140px;
+    white-space: nowrap;
+}
+
+th.rotate > div {
+    transform:
+        /* Magic Numbers */
+        translate(25px, 51px)
+        /* 45 is really 360 - 45 */
+        rotate(315deg);
+    width: 30px;
+}
+th.rotate > div > span {
+    border-bottom: 1px solid #ccc;
+    padding: 5px 10px;
+}
+
+.verticalTableHeader {
+    text-align:center;
+    white-space:nowrap;
+    transform: rotate(-90deg);
+
+}
+.verticalTableHeader p {
+    margin:0 -100% ;
+    display:inline-block;
+}
+.verticalTableHeader p:before{
+    content:'';
+    width:0;
+    padding-top:110%;/* takes width as reference, + 10% for faking some extra padding */
+    display:inline-block;
+    vertical-align:middle;
+}
+.fix_width {
+    text-align:center;
+    table-layout : fixed;
+    width:30px
+}

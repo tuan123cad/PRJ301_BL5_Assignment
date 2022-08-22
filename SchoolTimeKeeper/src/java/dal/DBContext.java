@@ -44,13 +44,25 @@ public class DBContext {
 
             Class.forName(dbDrive);
             connection = DriverManager.getConnection(url, usr, pwd);
+//            System.out.println("TRY THIS");
+//            if (DriverManager. == null) {
+//                usr = props.getProperty("usr_off");
+//                pwd = props.getProperty("pwd_off");
+//                svrName = props.getProperty("svrName_off");
+//                port = props.getProperty("port_off");
+//                dbName = props.getProperty("dbName_off");
+//                
+//                url = preUrl + "://" + svrName + ":" + port + ";databaseName=" + dbName;
+//             connection = DriverManager.getConnection(url, usr, pwd);   
+//            }
         } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(DBContext.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DBContext.class.getName()).log(Level.SEVERE, null, ex);  
+            }
         }
 
-    }
     
-        public boolean CheckConnect() {
+
+    public boolean CheckConnect() {
 
         try {
             if (connection != null) {
@@ -64,8 +76,8 @@ public class DBContext {
         return false;
 
     }
-        
-        public String getURL() {
+
+    public String getURL() {
         InputStream inpS = DBContext.class.getClassLoader().getResourceAsStream("info_about_db.properties");
         Properties props = new Properties();
         try {
@@ -73,21 +85,21 @@ public class DBContext {
         } catch (IOException ex) {
             Logger.getLogger(DBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-            String dbDrive = props.getProperty("dbDrive");
-            String preUrl = props.getProperty("preUrl");
-            String usr = props.getProperty("usr");
-            String pwd = props.getProperty("pwd");
-            String svrName = props.getProperty("svrName");
-            String port = props.getProperty("port");
-            String dbName = props.getProperty("dbName");
 
-            String command = preUrl + "://" + svrName + ":" + port + ";databaseName=" + dbName + " -U " + usr + " -P " + pwd + " | - Drive: " + dbDrive;
+        String dbDrive = props.getProperty("dbDrive");
+        String preUrl = props.getProperty("preUrl");
+        String usr = props.getProperty("usr");
+        String pwd = props.getProperty("pwd");
+        String svrName = props.getProperty("svrName");
+        String port = props.getProperty("port");
+        String dbName = props.getProperty("dbName");
+
+        String command = preUrl + "://" + svrName + ":" + port + ";databaseName=" + dbName + " -U " + usr + " -P " + pwd + " | - Drive: " + dbDrive;
 
         return command;
     }
-        
-            public String urlHost(String WebIP) throws UnknownHostException {
+
+    public String urlHost(String WebIP) throws UnknownHostException {
         InetAddress localHost = InetAddress.getLocalHost();
         String IP = localHost.getHostAddress();
         return (IP.equals(WebIP)) ? "localhost" : WebIP;
